@@ -5,6 +5,7 @@ import { User } from './user';
 import { Loginuser } from './loginuser';
 import { Profileuser } from './profileuser';
 
+
 @Injectable({
   providedIn: 'root'
 })
@@ -15,26 +16,30 @@ export class UsernService {
   }
 
   adduser(user: User): Observable<any> {
-    return this.http.post(`http://localhost:8080/signup`, user);
+    return this.http.post(`http://localhost:6060/signup`, user);
   }
 
   viewallusers(): Observable<any> {
-    return this.http.get('http://localhost:8080/users');
+    return this.http.get('http://localhost:6060/users');
   }
 
   loginuser(loginuser: Loginuser): Observable<any> {
-    return this.http.post('http://localhost:8080/login', loginuser);
+    return this.http.post('http://localhost:6060/login', loginuser);
   }
 
   getprofile(username: string): Observable<any> {
-    return this.http.get(`http://localhost:8080/${username}/profile`);
+    return this.http.get(`http://localhost:6060/${username}/profile`);
   }
 
   addprofile(profileuser: Profileuser): Observable<any> {
     return this.http.post(
-      `http://localhost:8080/sid22/addprofile`,
+      `http://localhost:6060/sid22/addprofile`,
       profileuser
     );
+  }
+
+  viewordersbybuyerid(buyerid: string): Observable<any> {
+    return this.http.get(`http://localhost:6060/orders/viewordersbybuyerid/`+buyerid);
   }
 
   logoutuser(): void {

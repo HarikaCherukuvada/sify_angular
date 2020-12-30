@@ -120,5 +120,8 @@
       }
     }
   },
-  "defaultProject": "sify-client"
+  "defaultProject": "sify-client",
+  "cli": {
+    "analytics": "3e0b0fc2-ebb1-49e6-af08-4affb98240e4"
+  }
 }
